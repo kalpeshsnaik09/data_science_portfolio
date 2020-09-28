@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <title>Loan Application Status</title>
+</head>
+
+<body>
+  <center>
+    <h1>
+      Loan Application Status
+    </h1>
+  </center>
+  <div class="align-items-center">
+    <div class="container alert-dark p-5">
+      <form class="form-inline" action="{{url_for('predict')}}" method="POST">
+        <div class="form-row align-items-center">
+          <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Gender</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="Gender">
+            <option selected>Choose...</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+          </select>
+        </div>
+        <div class="form-row align-items-center">
+          <label class="my-1 mr-2 ml-5" for="inlineFormCustomSelectPref">Married</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="Married">
+            <option selected>Choose...</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        <div class="form-row align-items-center">
+          <label class="my-1 mr-2 ml-5" for="inlineFormCustomSelectPref">Dependents</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="Dependents">
+            <option selected>Choose...</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3+</option>
+          </select>
+        </div>
+        <div class="form-row align-items-center">
+          <label class="my-1 mr-2 ml-5" for="inlineFormCustomSelectPref">Education</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="Education">
+            <option selected>Choose...</option>
+            <option value="0">Graduate</option>
+            <option value="1">Not Graduate</option>
+          </select>
+        </div>
+        <br><br><br><br><br>
+        <div class="form-row align-items-center">
+          <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Self Employed</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="Self_Employed">
+            <option selected>Choose...</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        <div class="form-row align-items-center">
+          <label class="my-1 mr-2 ml-5" for="inlineFormCustomSelectPref">Credit History</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="Credit_History">
+            <option selected>Choose...</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        <div class="form-row align-items-center">
+          <label class="my-1 mr-2 ml-5" for="inlineFormCustomSelectPref">Property Area</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="Property_Area">
+            <option selected>Choose...</option>
+            <option value="0">Rural</option>
+            <option value="2">Urban</option>
+            <option value="1">Semiurban</option>
+          </select>
+        </div>
+        <div class="form-row align-items-center">
+          <label class="my-1 mr-2 ml-5" for="inlineFormCustomSelectPref">Income</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="Income">
+            <option selected>Choose...</option>
+            <option value="0">high</option>
+            <option value="2">Medium</option>
+            <option value="1">Low</option>
+          </select>
+        </div>
+        <br><br><br><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div class="alert alert-success mt-5" role="alert">
+        {{prediction_txt}}
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
