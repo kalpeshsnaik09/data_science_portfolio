@@ -46,7 +46,7 @@ def predict():
         elif model.predict(final_feature)==0:
             output= 'Your Loan Application Rejected'
         return render_template('index.html',prediction_txt=output)
-    except:
+    except Exception as e:
         return render_template('index.html',prediction_txt="Select All Values...")
 
 if __name__ == "__main__":
